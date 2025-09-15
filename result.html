@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>✨ النتيجة ✨</title>
+  <style>
+    body { font-family:"Tajawal",sans-serif; background:#fef9f5; text-align:center; padding:50px; }
+    h1 { font-size:36px; }
+    p { font-size:24px; margin-top:20px; }
+  </style>
+</head>
+<body>
+  <h1>✨ نتيجتك ✨</h1>
+  <p id="resultText"></p>
+
+  <script>
+    // Get result from URL parameter
+    const params = new URLSearchParams(window.location.search);
+    const result = params.get('result');
+
+    let text = "";
+    if(result==="إدارة") text = "💼 أنت تميل للإدارة وقيادة الأعمال!";
+    if(result==="تقنية") text = "💻 أنت مبدع في التقنية!";
+    if(result==="فنون") text = "🎨 لديك ميول قوية للفنون والإبداع!";
+    if(result==="اجتماعي") text = "🤝 أنت اجتماعي وتحب مساعدة الآخرين!";
+
+    document.getElementById("resultText").textContent = text;
+  </script>
+</body>
+</html>
