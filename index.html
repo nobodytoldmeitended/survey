@@ -7,13 +7,12 @@
   <style>
     body { font-family:"Tajawal",sans-serif; background:#fffefc; padding:20px; }
     h1 { text-align:center; margin-bottom:20px; }
-    .card { background:#fff; padding:15px; margin:10px 0; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,.08); }
+    .card { background:#fdf6f0; padding:15px; margin:10px 0; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,.08); }
     p { font-weight:bold; }
     label { display:block; margin:8px 0; cursor:pointer; }
     input[type="radio"] { margin-left:6px; }
-    button { display:block; margin:20px auto; padding:12px 20px; border:none; border-radius:10px; background:linear-gradient(90deg,#fef9c3,#fce4ec,#c8facc); font-size:18px; cursor:pointer; }
-    button:hover { opacity:.9; }
-    #result { display:none; margin:20px auto; padding:15px; border-radius:12px; font-size:20px; font-weight:bold; text-align:center; max-width:500px; background:#d0f0c0; }
+    button { display:block; margin:20px auto; padding:12px 25px; border:none; border-radius:12px; background:linear-gradient(90deg,#fce4ec,#d0f0c0,#fff59d); font-size:18px; cursor:pointer; transition:0.3s; }
+    button:hover { transform:scale(1.05); opacity:.9; }
   </style>
 </head>
 <body>
@@ -107,36 +106,27 @@
       <label><input type="radio" name="q13" value="إدارة"> لا</label>
     </div>
 
-    <button type="button" onclick="calculateResult()">✨ إظهار النتيجة ✨</button>
+    <button type="button" onclick="goToResult()">✨ إظهار النتيجة ✨</button>
   </form>
 
-  <div id="result"></div>
+  <script>
+    function goToResult(){
+      const form = document.getElementById("quizForm");
+      const questions = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13"];
+      const scores = { "إدارة":0, "تقنية":0, "فنون":0, "اجتماعي":0 };
 
-  <button type="button" onclick="goToResult()">✨ إظهار النتيجة ✨</button>
+      for(let q of questions){
+        const selected = form.querySelector(input[name="${q}"]:checked);
+        if(!selected){ alert("⚠ الرجاء الإجابة على جميع الأسئلة"); return; }
+        scores[selected.value]++;
+      }
 
-<script>
-function goToResult(){
-  const form = document.getElementById("quizForm");
-  const questions = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13"];
-  const scores = { "إدارة":0, "تقنية":0, "فنون":0, "اجتماعي":0 };
+      let best = "إدارة";
+      for(let key in scores){ if(scores[key] > scores[best]) best = key; }
 
-  for(let q of questions){
-    const selected = form.querySelector(input[name="${q}"]:checked);
-    if(!selected){
-      alert("⚠ الرجاء الإجابة على جميع الأسئلة");
-      return;
+      // Go to result page
+      window.location.href = result.html?result=${best};
     }
-    scores[selected.value]++;
-  }
-
-  let best = "إدارة";
-  for(let key in scores){
-    if(scores[key] > scores[best]) best = key;
-  }
-
-  // Go to result.html and pass the result in URL
-  window.location.href = result.html?result=${best};
-}
-</script>
+  </script>
 </body>
 </html>
