@@ -5,8 +5,8 @@
   <title>✨ النتيجة ✨</title>
   <style>
     body { font-family:"Tajawal",sans-serif; background:#fef9f5; text-align:center; padding:50px; }
-    h1 { font-size:36px; }
-    p { font-size:24px; margin-top:20px; }
+    h1 { font-size:36px; color:#4caf50; }
+    p { font-size:24px; margin-top:20px; color:#ff4081; }
   </style>
 </head>
 <body>
@@ -14,7 +14,6 @@
   <p id="resultText"></p>
 
   <script>
-    // Get result from URL parameter
     const params = new URLSearchParams(window.location.search);
     const result = params.get('result');
 
