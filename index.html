@@ -112,36 +112,31 @@
 
   <div id="result"></div>
 
-  <script>
-    function calculateResult(){
-      const form = document.getElementById("quizForm");
-      const questions = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13"];
-      const scores = { "إدارة":0, "تقنية":0, "فنون":0, "اجتماعي":0 };
+  <button type="button" onclick="goToResult()">✨ إظهار النتيجة ✨</button>
 
-      for(let q of questions){
-        const selected = form.querySelector(input[name="${q}"]:checked);
-        if(!selected){
-          alert("⚠ الرجاء الإجابة على جميع الأسئلة");
-          return;
-        }
-        scores[selected.value]++;
-      }
+<script>
+function goToResult(){
+  const form = document.getElementById("quizForm");
+  const questions = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13"];
+  const scores = { "إدارة":0, "تقنية":0, "فنون":0, "اجتماعي":0 };
 
-      let best = "إدارة";
-      for(let key in scores){
-        if(scores[key] > scores[best]) best = key;
-      }
-
-      let message = "";
-      if(best==="إدارة") message = "💼 أنت تميل للإدارة وقيادة الأعمال!";
-      if(best==="تقنية") message = "💻 أنت مبدع في التقنية!";
-      if(best==="فنون") message = "🎨 لديك ميول قوية للفنون والإبداع!";
-      if(best==="اجتماعي") message = "🤝 أنت اجتماعي وتحب مساعدة الآخرين!";
-
-      const resultBox = document.getElementById("result");
-      resultBox.style.display = "block";
-      resultBox.textContent = message;
+  for(let q of questions){
+    const selected = form.querySelector(input[name="${q}"]:checked);
+    if(!selected){
+      alert("⚠ الرجاء الإجابة على جميع الأسئلة");
+      return;
     }
-  </script>
+    scores[selected.value]++;
+  }
+
+  let best = "إدارة";
+  for(let key in scores){
+    if(scores[key] > scores[best]) best = key;
+  }
+
+  // Go to result.html and pass the result in URL
+  window.location.href = result.html?result=${best};
+}
+</script>
 </body>
 </html>
