@@ -5,45 +5,22 @@
   <title>✨ اكتشف ميولك وقدراتك ✨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family:"Tajawal",sans-serif; background:#fffefc; margin:0; padding:20px; }
+    body { font-family:"Tajawal",sans-serif; background:#fffefc; padding:20px; }
     h1 { text-align:center; margin-bottom:20px; }
-
-    .card {
-      background:#fff;
-      padding:15px;
-      margin:10px 0;
-      border-radius:10px;
-      box-shadow:0 3px 8px rgba(0,0,0,.08);
-    }
+    .card { background:#fff; padding:15px; margin:10px 0; border-radius:10px; box-shadow:0 3px 8px rgba(0,0,0,.08); }
     p { font-weight:bold; }
     label { display:block; margin:8px 0; cursor:pointer; }
     input[type="radio"] { margin-left:6px; }
-
-    button {
-      display:block; margin:20px auto; padding:12px 20px;
-      border:none; border-radius:10px;
-      background:linear-gradient(90deg,#a7e3c4,#f8c7d6,#fff59d);
-      font-size:18px; font-weight:bold; cursor:pointer;
-    }
+    button { display:block; margin:20px auto; padding:12px 20px; border:none; border-radius:10px; background:linear-gradient(90deg,#fef9c3,#fce4ec,#c8facc); font-size:18px; cursor:pointer; }
     button:hover { opacity:.9; }
-
-    #result {
-      display:none;
-      margin:20px auto;
-      padding:15px;
-      border-radius:12px;
-      font-size:20px;
-      font-weight:bold;
-      text-align:center;
-      max-width:500px;
-    }
+    #result { display:none; margin:20px auto; padding:15px; border-radius:12px; font-size:20px; font-weight:bold; text-align:center; max-width:500px; background:#d0f0c0; }
   </style>
 </head>
 <body>
   <h1>✨ اكتشف ميولك وقدراتك ✨</h1>
   <form id="quizForm">
 
-    <!-- Q1 -->
+    <!-- Questions 1-13 -->
     <div class="card">
       <p>1) ما الذي تستمتع به أكثر؟</p>
       <label><input type="radio" name="q1" value="إدارة"> أستمتع بحل المشكلات</label>
@@ -52,7 +29,6 @@
       <label><input type="radio" name="q1" value="فنون"> أحب الفنون والإبداع</label>
     </div>
 
-    <!-- Q2 -->
     <div class="card">
       <p>2) قدرتي على الفهم السريع وحل المشكلات:</p>
       <label><input type="radio" name="q2" value="إدارة"> ضعيف</label>
@@ -60,7 +36,6 @@
       <label><input type="radio" name="q2" value="إدارة"> قوي</label>
     </div>
 
-    <!-- Q3 -->
     <div class="card">
       <p>3) مهاراتي في التواصل مع الآخرين:</p>
       <label><input type="radio" name="q3" value="اجتماعي"> ضعيف</label>
@@ -68,7 +43,6 @@
       <label><input type="radio" name="q3" value="اجتماعي"> قوي</label>
     </div>
 
-    <!-- Q4 -->
     <div class="card">
       <p>4) مهاراتي في استخدام التقنية:</p>
       <label><input type="radio" name="q4" value="تقنية"> ضعيف</label>
@@ -76,7 +50,6 @@
       <label><input type="radio" name="q4" value="تقنية"> قوي</label>
     </div>
 
-    <!-- Q5 -->
     <div class="card">
       <p>5) قدرتي على التنظيم وإدارة الوقت:</p>
       <label><input type="radio" name="q5" value="إدارة"> ضعيف</label>
@@ -84,7 +57,6 @@
       <label><input type="radio" name="q5" value="إدارة"> قوي</label>
     </div>
 
-    <!-- Q6 -->
     <div class="card">
       <p>6) قدرتي على العمل بروح الفريق:</p>
       <label><input type="radio" name="q6" value="اجتماعي"> ضعيف</label>
@@ -92,7 +64,6 @@
       <label><input type="radio" name="q6" value="اجتماعي"> قوي</label>
     </div>
 
-    <!-- Q7 -->
     <div class="card">
       <p>7) إبداعي في تقديم أفكار جديدة:</p>
       <label><input type="radio" name="q7" value="فنون"> ضعيف</label>
@@ -100,42 +71,36 @@
       <label><input type="radio" name="q7" value="فنون"> قوي</label>
     </div>
 
-    <!-- Q8 -->
     <div class="card">
       <p>8) هل العائد المالي هو الدافع الأساسي لديك؟</p>
       <label><input type="radio" name="q8" value="إدارة"> نعم</label>
       <label><input type="radio" name="q8" value="اجتماعي"> لا</label>
     </div>
 
-    <!-- Q9 -->
     <div class="card">
       <p>9) هل تفضل العمل الجماعي؟</p>
       <label><input type="radio" name="q9" value="اجتماعي"> نعم</label>
       <label><input type="radio" name="q9" value="إدارة"> لا</label>
     </div>
 
-    <!-- Q10 -->
     <div class="card">
       <p>10) هل تحب التطوير المستمر؟</p>
       <label><input type="radio" name="q10" value="تقنية"> نعم</label>
       <label><input type="radio" name="q10" value="إدارة"> لا</label>
     </div>
 
-    <!-- Q11 -->
     <div class="card">
       <p>11) هل تهتم بأن يناسب عملك ميولك حتى لو المال أقل؟</p>
       <label><input type="radio" name="q11" value="فنون"> نعم</label>
       <label><input type="radio" name="q11" value="إدارة"> لا</label>
     </div>
 
-    <!-- Q12 -->
     <div class="card">
       <p>12) هل تفضل الاستقرار أكثر من المغامرة؟</p>
       <label><input type="radio" name="q12" value="إدارة"> نعم</label>
       <label><input type="radio" name="q12" value="فنون"> لا</label>
     </div>
 
-    <!-- Q13 -->
     <div class="card">
       <p>13) هل تفضل أن يكون لعملك أثر إيجابي على المجتمع؟</p>
       <label><input type="radio" name="q13" value="اجتماعي"> نعم</label>
@@ -153,19 +118,17 @@
       const questions = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13"];
       const scores = { "إدارة":0, "تقنية":0, "فنون":0, "اجتماعي":0 };
 
-      // التحقق من كل سؤال
-      for (let q of questions){
+      for(let q of questions){
         const selected = form.querySelector(input[name="${q}"]:checked);
         if(!selected){
-          alert("⚠ لم تجب على كل الأسئلة");
+          alert("⚠ الرجاء الإجابة على جميع الأسئلة");
           return;
         }
         scores[selected.value]++;
       }
 
-      // اختيار أعلى نتيجة
       let best = "إدارة";
-      for (let key in scores){
+      for(let key in scores){
         if(scores[key] > scores[best]) best = key;
       }
 
